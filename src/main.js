@@ -1,7 +1,25 @@
+import './assets/scss/main.scss'
 import Vue from 'vue'
-import App from './App.vue'
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
+// Request HTTP
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
+// Routers
+import Home from './components/pages/Home'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+
+const routes = [
+  { path: "/", component: Home }
+]
+const router = new VueRouter({
+  routes,
+  mode: 'history'
 })
+
+
+// Render
+const app = new Vue({
+  router
+}).$mount('#app')
