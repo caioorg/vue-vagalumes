@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div id="main">
+    
     <div class="columns">
-      <div class="column is-6 is-offset-3">
+      <div class="column is-6">
         <div class="field">
           <label class="label">Nome do artista:</label>
           <div class="control">
@@ -11,15 +12,17 @@
         </div>
       </div>
     </div>
-    <div class="columns">
-      <div class="column items">
-        {{dados.url}}
-      </div>
+
+    <div class="Artist">
+      <About v-bind:description="dados"></About>
     </div>
+
   </div>
 </template>
 
 <script>
+
+  import About from '../artist/About.vue'
 
   export default {
     name: 'Search',
@@ -29,11 +32,14 @@
         dados: []
       }
     },
+    components: {
+      About
+    },
     methods:{
       FilterArtist(){
-        this.$http.get('https://www.vagalume.com.br/' + this.$options.filters.TrimReplace(this.nameArtist) + '/index.js').then(response => {
+        this.$http.get(this.$baseUrl + '/' + this.$options.filters.TrimReplace(this.nameArtist) + '/index.js').then(response => {
             this.dados = response.body.artist;
-            console.log(response.body)
+            this.nameArtist = '';
         }, error =>{
           console.log(error);
         });

@@ -10,6 +10,8 @@ import Home from './components/pages/Home'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
+Vue.prototype.$baseUrl = 'https://www.vagalume.com.br'
+
 const routes = [
   { path: "/", component: Home }
 ]
