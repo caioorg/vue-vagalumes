@@ -14,7 +14,7 @@
     </div>
 
     <div class="Artist">
-      <About v-bind:description="dados"></About>
+      <About v-if="dados.length != 0" v-bind:description="dados"></About>
     </div>
 
   </div>
