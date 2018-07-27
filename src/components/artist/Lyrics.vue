@@ -1,8 +1,8 @@
 <template>
     <div class="artist__lyrics">
         <div class="columns">
-            <div class="column is-half is-8">
-                <h2>Letras</h2>
+            <div class="column is-half is-9">
+                <h2>Letras {{musics.length}}</h2>
                 <table class="table is-striped">
                     <tbody>
                         <tr v-for="item in musics" :key="item.id">
