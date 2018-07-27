@@ -1,21 +1,26 @@
 <template>
-  <div id="main">
+  <div class="artist">
     
-    <div class="columns">
-      <div class="column is-6">
-        <div class="field">
-          <label class="label">Nome do artista:</label>
-          <div class="control">
-            <input class="input" v-model.lazy="nameArtist" type="text" placeholder="Digite o nome do artista">
-            <button v-on:click="FilterArtist()">Buscar</button>
+    <div class="search-artist">
+      <div class="columns">
+        <div class="column column is-6 is-offset-3">
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input is-medium" v-model.lazy="nameArtist" type="text" placeholder="Digite o nome do artista">
+            </div>
+            <div class="control">
+              <button class="button button--success is-medium is-link" v-on:click="FilterArtist()">Buscar</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="Artist">
-      <About v-if="dados.length != 0" v-bind:description="dados"></About>
+    <div class="artist__about" v-if="dados.length != 0">
+      <About v-bind:image="dados.pic_medium" v-bind:name="dados.desc"></About>
+      <Lyrics v-bind:musics="dados.lyrics.item"></Lyrics>
     </div>
+    
 
   </div>
 </template>
@@ -23,6 +28,7 @@
 <script>
 
   import About from '../artist/About.vue'
+  import Lyrics from '../artist/Lyrics.vue'
 
   export default {
     name: 'Search',
@@ -33,7 +39,8 @@
       }
     },
     components: {
-      About
+      About,
+      Lyrics
     },
     methods:{
       FilterArtist(){

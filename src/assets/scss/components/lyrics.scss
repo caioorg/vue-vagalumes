@@ -1,0 +1,17 @@
+.artist{
+    &__lyrics{
+        h2{
+            font-size: 30px;
+            font-weight: bold;
+            border-bottom: 2px solid green;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+        .table td{
+            width: 100vw;
+        }
+        .table a{
+            color: black;
+        }
+    }
+}

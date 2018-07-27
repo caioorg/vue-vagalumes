@@ -1,0 +1,21 @@
+.artist{
+    .search-artist{
+        margin-bottom: 50px;
+        .input{
+            border:0;
+            box-shadow: none;
+            border-bottom: 1px solid #aaaaaa;
+            border-radius: 0;
+            border-bottom-left-radius: 5px;
+            padding-left: 20px;
+            &:focus, &:active{
+                z-index: 0;
+            }
+        }
+        .button{
+            &--success{
+                background: green;
+            }
+        }
+    }
+}

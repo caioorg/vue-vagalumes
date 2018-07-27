@@ -1,0 +1,25 @@
+.artist{
+    &__about{
+        &--image{
+            img{
+                max-height: 270px;
+                border-radius: 5px;
+            }
+            border-right: 2px solid green;
+        }
+    }
+
+    &__descriptions{
+        align-items: center;
+        height: 100%;
+        font-size: 30px;
+        &--name{
+            font-style: italic;
+            span{
+                font-weight: bold;
+                margin-right: 20px;
+                font-style: normal;
+            }
+        }
+    }
+}
