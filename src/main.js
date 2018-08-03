@@ -6,20 +6,16 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 // Routers
-import Home from './components/pages/Home'
 import VueRouter from 'vue-router'
+import { routes } from './routes';
 Vue.use(VueRouter);
 
-Vue.prototype.$baseUrl = 'https://www.vagalume.com.br'
-
-const routes = [
-  { path: "/", component: Home }
-]
 const router = new VueRouter({
   routes,
   mode: 'history'
 })
 
+Vue.prototype.$baseUrl = 'https://www.vagalume.com.br'
 
 // Render
 const app = new Vue({

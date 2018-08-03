@@ -18,9 +18,8 @@
 
     <div class="artist__about" v-if="dados.length != 0">
       <About v-bind:image="dados.pic_medium" v-bind:name="dados.desc"></About>
-      <Lyrics v-bind:musics="dados.lyrics.item"></Lyrics>
+      <Lyrics v-bind:musics="dados.lyrics.item" v-bind:top="dados.toplyrics.item"></Lyrics>
     </div>
-    
 
   </div>
 </template>
