@@ -15,8 +15,6 @@ const router = new VueRouter({
   mode: 'history'
 })
 
-Vue.prototype.$baseUrl = 'https://www.vagalume.com.br'
-
 // Render
 const app = new Vue({
   router
