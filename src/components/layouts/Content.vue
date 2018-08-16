@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import Search from '../forms/Search'
+    import Search from '@/containers/search'
 
     export default {
         name: 'Content',
