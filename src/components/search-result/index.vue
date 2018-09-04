@@ -1,6 +1,6 @@
 <template>
     <div class="artist__about" v-if="dados.length != 0">
-        <!-- <About :imageUrl="imageUrl" v-bind:name="dados.desc"></About> -->
+        <About :imageUrl="imageUrl" v-bind:name="dados.desc"></About>
         <Lyrics v-bind:musics="dados.lyrics.item" v-bind:top="dados.toplyrics.item"></Lyrics>
     </div>
 </template>
