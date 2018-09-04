@@ -18,6 +18,7 @@
         </div>
 
         <!-- <SearchResult :dados="dados" :imageUrl="getImageUrl()" /> -->
+        <SearchResult :dados="dados" />
   </div>
 </template>
 
@@ -36,7 +37,7 @@
         },
 
         components: {
-            // SearchResult
+            SearchResult
         },
         
         methods: {
@@ -45,14 +46,24 @@
             },
 
             FilterArtist () {
-                const filteredString = this.$options.filters.TrimReplace(this.nameArtist)
-                const url = `${filteredString}/index.js`
-                get(url)
-                    .then((response) => {
-                        console.log('caio')
-                        this.dados = response.artist
-                        this.nameArtist = ''
-                })
+
+                this.$http.get('https://www.vagalume.com.br/' + this.$options.filters.TrimReplace(this.nameArtist) + '/index.js').then(response => {
+                    this.dados = response.body.artist;
+                    this.nameArtist = '';
+                }, error =>{
+                    console.log(error);
+                });
+
+
+                // const filteredString = this.$options.filters.TrimReplace(this.nameArtist)
+                // const url = `${filteredString}/index.js`
+                
+                // get(url)
+                //     .then((response) => {
+                //         console.log('caio')
+                //         this.dados = response.artist
+                //         this.nameArtist = ''
+                // })
             }
         },
         

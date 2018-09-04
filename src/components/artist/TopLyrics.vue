@@ -5,7 +5,7 @@
             <tbody>
                 <tr v-for="item in topmusics.slice(0,10)" :key="item.id">
                     <td>
-                        <router-link :to="{ path: '/:desc/:url', params: { userId: 123 }}">User</router-link>
+                        {{item.desc}}
                     </td>
                 </tr>
             </tbody>
